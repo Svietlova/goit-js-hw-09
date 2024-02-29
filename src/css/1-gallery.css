@@ -1,0 +1,35 @@
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    gap: 24px;
+    justify-content: center;
+    align-items: center;
+    padding: 24px 65px;
+    width: 1440px;
+    height: 696px;
+}
+
+.gallery-image {
+    width: 360px;
+    height: 200px;
+    transition: transform 0.5s;
+}
+
+.gallery-image:hover {
+    transform: scale(1.05);
+}
+
+.btn-home {
+    margin-top: 50px;
+    width: 86px;
+    height: 40px;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    background-color: #4e75ff;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+}

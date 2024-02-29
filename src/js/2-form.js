@@ -8,18 +8,18 @@ form.addEventListener('input', formData);
 
 populateTextarea();
 
-function onFormSubmit(e) {
-  e.preventDefault();
+function onFormSubmit(evt) {
+  evt.preventDefault();
   const emailValue = form.elements.email.value;
   const messageValue = form.elements.message.value;
   if (!emailValue || !messageValue) {
-    alert('Заповніть всі поля!');
+    alert('Please, fill out all fields! :)');
     return;
   }
   console.log(JSON.parse(localStorage.getItem(STORAGE_KEY)));
   localStorage.removeItem(STORAGE_KEY);
-  e.currentTarget.reset();
-}
+  evt.currentTarget.reset();
+};
 
 function formData() {
   const formData = {
@@ -27,7 +27,7 @@ function formData() {
     message: form.elements.message.value.trim(),
   };
   localStorage.setItem('feedback-form-state', JSON.stringify(formData));
-}
+};
 
 function populateTextarea() {
   const savedMessage = localStorage.getItem(STORAGE_KEY);
@@ -36,4 +36,5 @@ function populateTextarea() {
     form.elements.email.value = parsedSavedMessage.email;
     form.elements.message.value = parsedSavedMessage.message;
   }
-}
+};
+

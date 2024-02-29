@@ -1,8 +1,8 @@
 'use strict';
 
 import SimpleLightbox from 'simplelightbox';
-
 import 'simplelightbox/dist/simple-lightbox.min.css';
+
 const images = [
   {
     preview:
@@ -69,22 +69,22 @@ const images = [
   },
 ];
 
-const list = document.querySelector('.gallery');
+const gallery = document.querySelector('.gallery');
 const markup = images
-  .map(
-    images => `<li class="gallery-item">
-  <a class="gallery-link" href="${images.original}">
+  .map(({ preview, original, description }) =>
+  `<li class="gallery-item">
+  <a class="gallery-link" href="${original}">
     <img
       class="gallery-image"
-      src="${images.preview}"
-      alt="${images.description}"
+      src="${preview}"
+      alt="${description}"
     />
   </a>
 </li>`
   )
   .join('');
 
-list.innerHTML = markup;
+gallery.innerHTML = markup;
 
 new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
