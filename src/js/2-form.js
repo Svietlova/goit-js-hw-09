@@ -10,8 +10,8 @@ populateTextarea();
 
 function onFormSubmit(evt) {
   evt.preventDefault();
-  const emailValue = form.elements.email.value;
-  const messageValue = form.elements.message.value;
+  const emailValue = form.elements.email.value.trim();
+  const messageValue = form.elements.message.value.trim();
   if (!emailValue || !messageValue) {
     alert('Please, fill out all fields! :)');
     return;
